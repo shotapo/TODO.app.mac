@@ -1,4 +1,4 @@
-package dto;
+package com.example.todoapp.dto;
 
 public class TaskResponse {
 
