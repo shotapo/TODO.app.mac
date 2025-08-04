@@ -7,15 +7,15 @@ public class User {
     private String name;
     private String email;
 
+    // デフォルトコンストラクタ（必須：Springが内部で使います）
+    public User() {
+    }
+
     // コンストラクタ
     public User(int userID, String name, String email) {
         this.userID = userID;
         this.name = name;
         this.email = email;
-    }
-
-    public User() {
-        // デフォルトコンストラクタ（必須：Springが内部で使います）
     }
 
     // ゲッター

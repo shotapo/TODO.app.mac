@@ -13,9 +13,17 @@ public class Task {
     private TaskStatus status;
     private User assignedTo;
 
+    /* 
+     * コンストラクタ
+     * →クラスをnewした瞬間に実行される関数
+     * →最初にやっておかないといけない処理、メンバ変数の初期化などでよく活用される。
+     */
     public Task() {
     }
 
+    /* 
+     * タスクの情報を保持・操作するための基本的なコンストラクタ
+     */
     public Task(int id, String title, String description, LocalDate dueDate, TaskStatus status, User assignedTo) {
         this.id = id;
         this.title = title;
@@ -25,10 +33,12 @@ public class Task {
         this.assignedTo = assignedTo;
     }
 
+    // 締め切りを過ぎているかどうかを判定
     public boolean isOverdue() {
         return LocalDate.now().isAfter(dueDate);
     }
 
+    // タスクを完了状態にする
     public void markComplete() {
         this.status = TaskStatus.COMPLETED;
     }
@@ -43,6 +53,9 @@ public class Task {
         return this.dueDate;
     }
 
+    /* 
+     * ゲッターとセッター
+     */
     public long getId() {
         return id;
     }

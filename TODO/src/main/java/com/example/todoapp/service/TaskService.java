@@ -8,7 +8,6 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import com.example.todoapp.entity.Task;
-import com.example.todoapp.repository.TaskRepository;
 
 /**
  * タスクを管理するクラス
