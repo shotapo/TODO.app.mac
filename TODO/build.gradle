@@ -23,3 +23,16 @@ dependencies {
 test {
     useJUnitPlatform()
 }
+
+
+processResources {
+    from('src/main/resources') {
+        include '**/*.html'
+    }
+}
+
+tasks.withType(ProcessResources).configureEach {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}
+
+
