@@ -1,0 +1,63 @@
+/* タスクページ専用 */
+.container {
+  /* タスクは横幅広めのままでOK（common.css の 880px を使用） */
+}
+
+#task-list.list,
+#task-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+/* タスクカード */
+.task {
+  border: 1px solid #e1e6ef;
+  border-radius: 12px;
+  background: #fff;
+  padding: 14px 16px;
+  box-shadow: 0 3px 10px rgba(29, 31, 36, 0.04);
+}
+
+.task-title {
+  font-weight: 700;
+  color: #2b2f36;
+  margin-bottom: 6px;
+}
+
+/* フォーム行間 */
+#task-form input,
+#task-form select {
+  margin-bottom: 10px;
+}
+
+#task-form button[type="submit"] {
+  margin-top: 4px;
+  min-width: 120px;
+}
+
+/* ステータスの軽い色分け例（値に応じてクラスを付ける運用なら） */
+.status {
+  display: inline-block;
+  font-size: .85rem;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: #edf1f7;
+  color: #3f5e8a;
+}
+.status.done {
+  background: #e7f5ed;
+  color: #2f7d4a;
+}
+.status.open {
+  background: #fff4e6;
+  color: #8a5a2f;
+}
+
+/* レスポンシブ: 横幅が広いときは2列 */
+@media (min-width: 880px) {
+  #task-list {
+    grid-template-columns: 1fr 1fr;
+  }
+}

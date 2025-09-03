@@ -1,0 +1,24 @@
+/* ホーム専用 - ログインビュー */
+.container {
+  max-width: 520px; /* ホームは少しコンパクトに */
+}
+
+#loginBtn {
+  width: 100%;
+  margin-top: 12px;
+}
+
+#loginForm {
+  margin-top: 20px;
+}
+
+#loginForm button[type="submit"] {
+  width: 100%;
+  margin-top: 8px;
+  /* 共通ボタンに加えてプライマリ色を使うならクラスでもOK */
+}
+
+/* 軽いアクセント */
+h1 {
+  letter-spacing: .02em;
+}

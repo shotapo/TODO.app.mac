@@ -1,72 +1,41 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>タスク管理ページ</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin: 20px; }
-        h1 { color: #333; }
-        .task { border: 1px solid #ccc; padding: 10px; margin-bottom: 10px; }
-        .task-title { font-weight: bold; }
-    </style>
+    <link rel="stylesheet" th:href="@{/css/common.css}">
+    <link rel="stylesheet" th:href="@{/css/task.css}">
 </head>
+
 <body>
-    <h1>タスク一覧</h1>
-    <div id="task-list"></div>
+    <div class="container">
+        <h1>タスク一覧</h1>
+        <div id="task-list" class="list"></div>
 
-    <h2>新しいタスクを追加</h2>
-    <form id="task-form">
-        <input type="text" id="title" placeholder="タイトル" required><br>
-        <input type="text" id="description" placeholder="説明"><br>
-        <input type="date" id="dueDate"><br>
-        <input type="text" id="assignedTo" placeholder="担当者"><br>
-        <select id="status">
-            <option value="未完了">未完了</option>
-            <option value="完了">完了</option>
-        </select><br>
-        <button type="submit">追加</button>
-    </form>
+        <h2>新しいタスクを追加</h2>
+        <form id="task-form">
+            <label for="title">タイトル:</label>
+            <input type="text" id="title" placeholder="タイトル" required>
 
-    <script>
-        // タスク一覧を取得して表示
-        async function fetchTasks() {
-            const response = await fetch('/tasks');
-            const tasks = await response.json();
-            const taskList = document.getElementById('task-list');
-            taskList.innerHTML = '';
-            tasks.forEach(task => {
-                const div = document.createElement('div');
-                div.className = 'task';
-                div.innerHTML = `<div class="task-title">${task.title}</div>
-                                 <div>${task.description}</div>
-                                 <div>期限: ${task.dueDate}</div>
-                                 <div>担当: ${task.assignedTo}</div>
-                                 <div>ステータス: ${task.status}</div>`;
-                taskList.appendChild(div);
-            });
-        }
+            <label for="description">説明:</label>
+            <input type="text" id="description" placeholder="説明">
 
-        // 新しいタスクを追加
-        document.getElementById('task-form').addEventListener('submit', async (e) => {
-            e.preventDefault();
-            const task = {
-                title: document.getElementById('title').value,
-                description: document.getElementById('description').value,
-                dueDate: document.getElementById('dueDate').value,
-                assignedTo: document.getElementById('assignedTo').value,
-                status: document.getElementById('status').value
-            };
-            await fetch('/tasks/request', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(task)
-            });
-            fetchTasks(); // 更新
-            e.target.reset(); // フォームリセット
-        });
+            <label for="dueDate">期限:</label>
+            <input type="date" id="dueDate">
 
-        // 初期表示
-        fetchTasks();
-    </script>
+            <label for="assignedTo">担当者:</label>
+            <input type="text" id="assignedTo" placeholder="担当者">
+
+            <label for="status">ステータス:</label>
+            <select id="status">
+                <option value="未完了">未完了</option>
+                <option value="完了">完了</option>
+            </select>
+
+            <button class="primary" type="submit">追加</button>
+        </form>
+    </div>
+
+    <script src="/js/task.js" defer></script>
 </body>
 </html>

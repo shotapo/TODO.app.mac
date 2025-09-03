@@ -1,27 +1,17 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>TODOアプリ ホーム</title>
-    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" th:href="@{/css/common.css}">
+    <link rel="stylesheet" th:href="@{/css/home.css}">
 </head>
 <body>
     <div class="container">
         <h1>TODOアプリへようこそ</h1>
-        <button id="loginBtn">ログイン</button>
 
-        <!-- ログインフォーム（初期状態は非表示） -->
-        <form id="loginForm" style="display:none;" method="post" action="/login">
-            <label for="username">ユーザー名:</label>
-            <input type="text" id="username" name="username"><br><br>
-
-            <label for="password">パスワード:</label>
-            <input type="password" id="password" name="password"><br><br>
-            <input type="password" id="password" name="password"><br><br>
-            <button type="submit">ログイン</button>
-        </form>
+        <!-- ログインページへのリンク -->
+        <a class="button primary" th:href="@{/login}">ログイン</a>
     </div>
-    <script src="/js/home.js" defer></script>
-
 </body>
 </html>
