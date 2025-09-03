@@ -10,5 +10,6 @@ public class HomeController {
     public String home() {
         return "home"; // resources/templates/home.htmlを返す
     }
+
 }
 
