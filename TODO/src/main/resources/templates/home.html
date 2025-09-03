@@ -2,28 +2,26 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>TODOアプリ</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: sans-serif;
-        }
-        header {
-            background-color: #4CAF50;
-            color: white;
-            padding: 30px;
-            text-align: center;
-        }
-        h1 {
-            font-size: 48px; /* 大きな文字サイズ */
-            margin: 0;
-        }
-    </style>
+    <title>TODOアプリ ホーム</title>
+    <link rel="stylesheet" href="/css/home.css">
 </head>
 <body>
-    <header>
-        <h1>TODOアプリへようこそ！</h1>
-    </header>
+    <div class="container">
+        <h1>TODOアプリへようこそ</h1>
+        <button id="loginBtn">ログイン</button>
+
+        <!-- ログインフォーム（初期状態は非表示） -->
+        <form id="loginForm" style="display: none; margin-top: 20px;">
+            <label for="username">ユーザー名:</label>
+            <input type="text" id="username" name="username"><br><br>
+
+            <label for="password">パスワード:</label>
+            <input type="password" id="password" name="password"><br><br>
+
+            <button type="submit">ログイン</button>
+        </form>
+    </div>
+    <script src="/js/home.js" defer></script>
+
 </body>
 </html>
