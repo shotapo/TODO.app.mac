@@ -37,19 +37,19 @@ public class TaskController {
 
     // 新しいタスクを登録する
     @GetMapping("/{id}")
-    public Task getTaskById(@PathVariable int id) {
+    public Task getTaskById(@PathVariable long id) {
         return taskService.getTaskById(id);
     }
 
     // タスクを更新する
     @PutMapping("/{id}")
-    public Task updateTask(@PathVariable int id, @RequestBody Task task) {
+    public Task updateTask(@PathVariable long id, @RequestBody Task task) {
         return taskService.updateTask(id, task);
     }
 
     // タスクを削除する
     @DeleteMapping("/{id}")
-    public void deleteTask(@PathVariable int id) {
+    public void deleteTask(@PathVariable long id) {
         taskService.deleteTask(id);
     }
 

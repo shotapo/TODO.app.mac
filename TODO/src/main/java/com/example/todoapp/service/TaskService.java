@@ -31,7 +31,7 @@ public class TaskService {
         return tasks;
     }
 
-    public Task findTaskById(int id) {
+    public Task findTaskById(long id) {
         for (Task task : tasks) {
             if (task.getId() == id) {
                 return task;
@@ -40,7 +40,7 @@ public class TaskService {
         return null;
     }
 
-    public void removeTask(int id) {
+    public void removeTask(long id) {
         tasks.removeIf(task -> task.getId() == id);
     }
 
@@ -59,7 +59,7 @@ public class TaskService {
     }
 
     // TaskService.java
-    public Task updateTask(int id, Task updatedTask) {
+    public Task updateTask(long id, Task updatedTask) {
         for (int i = 0; i < tasks.size(); i++) {
             if (tasks.get(i).getId() == id) {
                 tasks.set(i, updatedTask);
@@ -71,7 +71,7 @@ public class TaskService {
 
 
 
-    public boolean markTaskAsCompleted(int id) {
+    public boolean markTaskAsCompleted(long id) {
         Task task = findTaskById(id);
         if (task != null) {
             task.markComplete();  // TaskStatus を COMPLETED に変更
@@ -103,11 +103,11 @@ public class TaskService {
         return task;
     }
 
-    public Task getTaskById(int id) {
+    public Task getTaskById(long id) {
         return findTaskById(id);
     }
 
-    public void deleteTask(int id) {
+    public void deleteTask(long id) {
         removeTask(id);
     }
 }

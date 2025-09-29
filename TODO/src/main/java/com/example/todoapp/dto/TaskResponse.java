@@ -4,47 +4,47 @@ public class TaskResponse {
     private Long id;
     private String title;
     private String description;
-    private String duedate;
+    private String dueDate;
     private String status;
     
     // getter
-    private Long getId() {
+    public Long getId() {
         return id;
     }
 
-    private String getTitle() {
+    public String getTitle() {
         return title;
     }
 
-    private String getDescription() {
+    public String getDescription() {
         return description;
     }
 
-    private String getDuedate() {
-        return duedate; 
+    public String getDueDate() {
+        return dueDate; 
     }
-    private String getStatus() {
+    public String getStatus() {
         return status;
     }
 
     // setter
-    private void setId( Long id) {
+    public void setId( Long id) {
         this.id = id;
     }
 
-    private void setTitle ( String title) {
+    public void setTitle ( String title) {
         this.title = title;
     }
 
-    private void setDescription (String description) {
+    public void setDescription (String description) {
         this.description = description;
     }
 
-    private void setDuedate (String duedate) {
-        this.duedate = duedate;
+    public void setDueDate (String dueDate) {
+        this.dueDate = dueDate;
     }
 
-    private void setStatus (String status) {
+    public void setStatus (String status) {
         this.status = status;
     }
 

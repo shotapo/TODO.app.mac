@@ -21,7 +21,7 @@ public class SecurityConfig {
           )
           .formLogin(form -> form
               .loginPage("/login")                 // 自作ログインページ
-              .defaultSuccessUrl("/task", true)    // 成功後に /task
+              .defaultSuccessUrl("/taskpage", true)    // 成功後に /taskpage
               .permitAll()
           )
           .logout(logout -> logout
